@@ -36,11 +36,11 @@ print("Estudiante:")
 print(estudiante.solicitar_libro("Python Básico"))
 print(estudiante.solicitar_libro("Python Intermedio"))
 print(estudiante.solicitar_libro("Python Avanzado"))
-print(estudiante.solicitar_libro("Python / DJango"))
+print(estudiante.solicitar_libro("Python / DJango")) # Debe indicar límite alcanzado: 3
 
 print()
 print("Profesor:")
 print(profesor.solicitar_libro("Python Básico"))
 print(profesor.solicitar_libro("Python Intermedio"))
 print(profesor.solicitar_libro("Python Avanzado"))
-print(profesor.solicitar_libro("Python / DJango"))
+print(profesor.solicitar_libro("Python / DJango")) # Todos autorizados
