@@ -1,46 +1,29 @@
 from biblioteca import Biblioteca
-from exceptions import BibliotecaError
+from exceptions import UsuarioNoEncontradoError
 from libros import LibroFisico
-from usuarios import Estudiante, Profesor, SolicitanteProtocol
+from usuarios import Estudiante, Profesor
 
 biblioteca = Biblioteca("Platzi Biblioteca")
-
 estudiante = Estudiante("Luis", "1123123123", "Sistemas")
 estudiante_1 = Estudiante("Jose", "56789", "Salud")
 profesor = Profesor("Felipe", "123123123")
-usuarios: list[SolicitanteProtocol] = [estudiante, estudiante_1, profesor]
+mi_libro = LibroFisico("100 Años de Soledad", "Gabriel Garcia Marquez", "9781644734728")
+otro_libro = LibroFisico("El Principito", "Saint-Exupéry", "9781644731234728")
+
+biblioteca.usuarios = [estudiante, estudiante_1, profesor]
+biblioteca.libros = [mi_libro, otro_libro]
 
 
-mi_libro = LibroFisico(
-    "100 Años de Soledad",
-    "Gabriel Garcia Marquez",
-    "9781644734728",
-    True,
-)
-mi_libro_no_disponible = LibroFisico(
-    "No disponible",
-    "Luis",
-    "56789",
-    True,
-)
-otro_libro = LibroFisico(
-    "El Principito",
-    "Saint-Exupéry",
-    "9781644731234728",
-    True,
-)
+print("Bienvenido a Platzi Biblioteca")
 
+print("Libros disponibles:")
+for titulo in biblioteca.libros_disponibles():
+    print(f"  - {titulo}")
+print()
 
-biblioteca.libros = [mi_libro, mi_libro_no_disponible, otro_libro]
-
-
-print(biblioteca.libros)
-
+cedula = input("Digite el numero cedula: ")
 try:
-    resultado = estudiante.solicitar_libro(None)
-except BibliotecaError as e:
-    print(f"{e}, {type(e)}")
-    print("Error: No se pudo solicitar el libro")
-
-resultado = estudiante.solicitar_libro("El Principito")
-print(resultado)
+    usuario = biblioteca.buscar_usuario(cedula)
+    print(usuario.cedula, usuario.nombre)
+except UsuarioNoEncontradoError:
+    print("El usuario que estás buscando no existe.")
