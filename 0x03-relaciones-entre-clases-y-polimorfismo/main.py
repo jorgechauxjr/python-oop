@@ -25,7 +25,8 @@ print()
 cedula = input("Digite el numero cedula: ")
 try:
     usuario = biblioteca.buscar_usuario(cedula)
-    print(usuario.cedula, usuario.nombre)
+    # print(usuario.cedula, usuario.nombre)
+    print(usuario.nombreCompleto)
 except UsuarioNoEncontradoError as e:
     print(e)
     # Finalizar el programa

@@ -31,6 +31,9 @@ class Usuario(UsuarioBase):
     # def metodo_prueba(self):
     #     return "Metodo de prueba para saber como funciona ABC"
 
+    @property
+    def nombreCompleto(self):
+        return f"Nombre: {self.nombre} -- Cedula: {self.cedula}"
 
 class Estudiante(Usuario):
     def __init__(self, nombre, cedula, carrera):
