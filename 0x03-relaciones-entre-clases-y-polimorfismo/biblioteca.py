@@ -1,6 +1,5 @@
 from exceptions import LibroNoDisponibleError, UsuarioNoEncontradoError
 
-
 class Biblioteca:
     def __init__(self, name) -> None:
         self.name = name
@@ -8,7 +7,7 @@ class Biblioteca:
         self.usuarios = []
 
     def libros_disponibles(self):
-        return [libro.titulo for libro in self.libros if libro.disponible]
+        return [libro for libro in self.libros if libro.disponible]
 
     def buscar_usuario(self, cedula):
         for usuario in self.usuarios:

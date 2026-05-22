@@ -11,12 +11,15 @@ profesor = Profesor("Felipe", "123123123")
 biblioteca.usuarios = [profesor] + data_estudiantes
 biblioteca.libros = data_libros
 
+# Ejemplo de setter.
+# libro_de_prueba = data_libros[0]
+# libro_de_prueba.veces_prestado = -1
 
 print("Bienvenido a Platzi Biblioteca")
 
 print("Libros disponibles:")
-for titulo in biblioteca.libros_disponibles():
-    print(f"  - {titulo}")
+for libro in biblioteca.libros_disponibles():
+    print(libro.descripcion_completa)
 print()
 
 cedula = input("Digite el numero cedula: ")
