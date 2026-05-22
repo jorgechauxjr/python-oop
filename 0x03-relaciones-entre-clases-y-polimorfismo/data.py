@@ -16,7 +16,7 @@ libro10 = LibroFisico("La Metamorfosis", "Franz Kafka", "9788420674025")
 
 
 # Creación de 10 estudiantes con diferentes nombres, cédulas y carreras
-estudiante1 = Estudiante("Ana María López", "1001234567", "Ingeniería de Sistemas")
+estudiante1 = Estudiante("Ana María López", "123", "Ingeniería de Sistemas")
 estudiante2 = Estudiante("Carlos Andrés Ruiz", "1001234568", "Medicina")
 estudiante3 = Estudiante("María Fernanda Torres", "1001234569", "Derecho")
 estudiante4 = Estudiante("Juan Pablo Gómez", "1001234570", "Arquitectura")
