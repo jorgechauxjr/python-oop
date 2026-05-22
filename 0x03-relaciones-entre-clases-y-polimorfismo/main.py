@@ -1,3 +1,4 @@
+import sys
 from biblioteca import Biblioteca
 from data import data_estudiantes, data_libros
 from exceptions import LibroNoDisponibleError, UsuarioNoEncontradoError
@@ -24,6 +25,8 @@ try:
     print(usuario.cedula, usuario.nombre)
 except UsuarioNoEncontradoError as e:
     print(e)
+    # Finalizar el programa
+    sys.exit()
 
 titulo = input("Digite el titulo del libro: ")
 try:
@@ -31,6 +34,8 @@ try:
     print(f"El libro que selecionaste es: {libro}")
 except LibroNoDisponibleError as e:
     print(e)
+    # Finalizar el programa
+    sys.exit()
 
 resultado = usuario.solicitar_libro(libro.titulo)
 print(f"\n{resultado}")
