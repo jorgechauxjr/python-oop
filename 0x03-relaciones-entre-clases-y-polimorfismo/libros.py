@@ -1,5 +1,5 @@
+from abc import ABC, abstractmethod
 from typing import Protocol
-
 from exceptions import LibroNoDisponibleError
 
 
@@ -16,8 +16,16 @@ class LibroProtocol(Protocol):
         """Calcula el tiempo de prestamo"""
         ...
 
+class LibroBase(ABC):
+    @abstractmethod
+    def prestar(self):
+        pass
 
-class Libro:
+    @abstractmethod
+    def devolver(self):
+        pass
+
+class Libro(LibroBase):
     def __init__(self, titulo, autor, isbn, disponible=True):
         self.titulo = titulo
         self.autor = autor
