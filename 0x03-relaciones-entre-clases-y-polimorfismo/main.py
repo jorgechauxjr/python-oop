@@ -3,6 +3,7 @@ from biblioteca import Biblioteca
 from data import data_estudiantes, data_libros
 from exceptions import LibroNoDisponibleError, UsuarioNoEncontradoError
 from usuarios import Profesor
+from libros import Libro
 
 biblioteca = Biblioteca("Platzi Biblioteca")
 profesor = Profesor("Felipe", "123123123")
@@ -15,37 +16,45 @@ biblioteca.libros = data_libros
 # libro_de_prueba = data_libros[0]
 # libro_de_prueba.veces_prestado = -1
 
-print("Bienvenido a Platzi Biblioteca")
+# resultado = Biblioteca.validar_isbn("234567897894")
+# print(f"El isbn es valido?: {resultado}")
 
-print("Libros disponibles:")
-for libro in biblioteca.libros_disponibles():
-    print(libro.descripcion_completa)
+libro_no_disponible = Libro.crear_no_disponible("Libro de prueba", "Autor de prueba", "12345678987")
+print(libro_no_disponible)
 print()
+print("Libro disponible?: ", libro_no_disponible.disponible)
 
-cedula = input("Digite el numero cedula: ")
-try:
-    usuario = biblioteca.buscar_usuario(cedula)
-    # print(usuario.cedula, usuario.nombre)
-    print(usuario.nombreCompleto)
-except UsuarioNoEncontradoError as e:
-    print(e)
-    # Finalizar el programa
-    sys.exit()
+# print("Bienvenido a Platzi Biblioteca")
 
-titulo = input("Digite el titulo del libro: ")
-try:
-    libro = biblioteca.buscar_libro(titulo)
-    print(f"El libro que selecionaste es: {libro}")
-except LibroNoDisponibleError as e:
-    print(e)
-    # Finalizar el programa
-    sys.exit()
+# print("Libros disponibles:")
+# for libro in biblioteca.libros_disponibles():
+#     print(libro.descripcion_completa)
+# print()
 
-resultado = usuario.solicitar_libro(libro.titulo)
-print(f"\n{resultado}")
+# cedula = input("Digite el numero cedula: ")
+# try:
+#     usuario = biblioteca.buscar_usuario(cedula)
+#     # print(usuario.cedula, usuario.nombre)
+#     print(usuario.nombreCompleto)
+# except UsuarioNoEncontradoError as e:
+#     print(e)
+#     # Finalizar el programa
+#     sys.exit()
 
-try:
-    resultado_prestar = libro.prestar()
-    print(f"\n{resultado_prestar}")
-except LibroNoDisponibleError as e:
-    print(e)
+# titulo = input("Digite el titulo del libro: ")
+# try:
+#     libro = biblioteca.buscar_libro(titulo)
+#     print(f"El libro que selecionaste es: {libro}")
+# except LibroNoDisponibleError as e:
+#     print(e)
+#     # Finalizar el programa
+#     sys.exit()
+
+# resultado = usuario.solicitar_libro(libro.titulo)
+# print(f"\n{resultado}")
+
+# try:
+#     resultado_prestar = libro.prestar()
+#     print(f"\n{resultado_prestar}")
+# except LibroNoDisponibleError as e:
+#     print(e)

@@ -24,3 +24,7 @@ class Biblioteca:
         raise LibroNoDisponibleError(
             f"El libro: {titulo}, no está disponible o no existe."
         )
+    
+    @staticmethod
+    def validar_isbn(isbn):
+        return len(isbn) >= 10

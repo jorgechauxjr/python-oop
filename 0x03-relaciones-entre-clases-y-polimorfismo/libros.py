@@ -33,6 +33,10 @@ class Libro(LibroBase):
         self.disponible = disponible
         self.__veces_prestado = 0
 
+    @classmethod
+    def crear_no_disponible(cls, titulo, autor, isbn):
+        return cls(titulo, autor, isbn, disponible=False)
+
     def __str__(self):
         return f"{self.titulo} por {self.autor} disponible: {self.disponible}"
 
