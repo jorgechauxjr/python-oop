@@ -10,7 +10,9 @@
         {
             "nombre": "Ana María López",
             "cedula": "123",
-            "libros_prestados": [],
+            "libros_prestados": [
+                "El Principito"
+            ],
             "carrera": "Ingeniería de Sistemas",
             "limite_libros": 3
         },
@@ -90,8 +92,8 @@
             "titulo": "El Principito",
             "autor": "Antoine de Saint-Exupéry",
             "isbn": "9780156012195",
-            "disponible": true,
-            "_Libro__veces_prestado": 0
+            "disponible": false,
+            "_Libro__veces_prestado": 1
         },
         {
             "titulo": "Don Quijote de la Mancha",
@@ -150,5 +152,5 @@
             "_Libro__veces_prestado": 0
         }
     ],
-    "fecha_guardado": "2026-06-01T14:00:29.459599"
+    "fecha_guardado": "2026-06-01T14:30:54.883425"
 }
