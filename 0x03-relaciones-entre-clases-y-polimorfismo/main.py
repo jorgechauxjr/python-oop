@@ -4,6 +4,7 @@ from data import data_estudiantes, data_libros
 from exceptions import LibroNoDisponibleError, UsuarioNoEncontradoError
 from usuarios import Profesor
 from libros import Libro
+from persistencia import Persistencia
 
 biblioteca = Biblioteca("Platzi Biblioteca")
 profesor = Profesor("Felipe", "123123123")
@@ -11,6 +12,8 @@ profesor = Profesor("Felipe", "123123123")
 
 biblioteca.usuarios = [profesor] + data_estudiantes
 biblioteca.libros = data_libros
+persistencia = Persistencia()
+persistencia.guardar_datos(biblioteca)
 
 # Ejemplo de setter.
 # libro_de_prueba = data_libros[0]
